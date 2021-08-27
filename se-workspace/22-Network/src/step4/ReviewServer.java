@@ -14,6 +14,10 @@ public class ReviewServer {
 				//대기하다 클라이언트가 접속하면 동작한다
 				//리턴된느 Socket은 개별 클라이언트와 대화할 상담원전화기
 				Socket socket = serverSocket.accept();
+				String clientIp = socket.getInetAddress().toString();
+				System.out.println(clientIp+"님 접속");
+				PrintWriter out = new PrintWriter(socket.getOutputStream());
+				out.println(clientIp+"님 즐거운 금요일")
 				socket.close();
 			}
 		}finally {

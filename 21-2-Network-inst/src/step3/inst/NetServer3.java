@@ -17,14 +17,22 @@ public class NetServer3 {
 			while(true) {
 				Socket socket = serverSocket.accept();
 				String clientIP = socket.getInetAddress().toString();
-				BufferedReader br= new BufferedReader(new InputStreamReader(socket.getInputStream()));
-				String message = br.readLine();
-				System.out.println(count+"번째 클라이언트"+clientIP+"님의 메세지"+message);
-				count++;
+				System.out.println(clientIP+"님 접속");
+				BufferedReader br = null;
+				try {
+					br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+					String message = br.readLine();
+					System.out.println(count+"번째 클라이언트"+clientIP+"님의 메세지"+message);
+					count++;
+				}
+				
 				br.close();
 				socket.close();
 			}
-		}finally {
+			catch(Exception e) {
+				System.out.println(clientIp+"와 통신 중 예외발생"+e.getMessage());
+			
+			}finally {
 			if(serverSocket!=null) {
 				serverSocket.close();
 			}
