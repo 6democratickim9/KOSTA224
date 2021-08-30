@@ -24,7 +24,7 @@ public class EchoClient {
 		PrintWriter out=null;// 서버로 출력 
 		BufferedReader br=null;//서버에서 입력 
 		try {
-			socket=new Socket(IP.LOCAL,5432);
+			socket=new Socket(IP.INST,5432);
 			scanner=new Scanner(System.in);
 			out=new PrintWriter(socket.getOutputStream(),true);//autoflush 즉시 출력 
 			br=new BufferedReader(new InputStreamReader(socket.getInputStream()));
