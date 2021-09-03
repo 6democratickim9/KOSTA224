@@ -53,6 +53,30 @@ public class MemberDAO {
 			closeAll(pstmt, con);
 		}
 	}
+	public MemberVO findMemberById(String id) throws SQLException{
+		MemberVO vo = null;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			con=DriverManager.getConnection(url,username,pass);
+			String sql = "select * from member where id =?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				vo = new MemberVO(id,rs.getString(1),rs.getString(2),rs.getString(3));
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return null;
+	}
 }
 
 

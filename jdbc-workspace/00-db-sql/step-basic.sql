@@ -10,6 +10,7 @@ INSERT INTO member(id,password,name,address) VALUES('java','a','MINJU','ori');
 INSERT INTO member(id,password,name,address) VALUES('angel','kind','이상순','애월읍');
 SELECT id,password FROM member WHERE name='이상순' AND address='애월읍';
 
+DROP table member;
 
 UPDATE member SET address='오리' WHERE address='애월읍';
 SELECT id,name FROM member where address='오리';
