@@ -6,7 +6,7 @@ public class TestUnit2 {
 	//	try {
 	//		AccountDAO dao = new AccountDAO();
 			//1. AccountNotFoundException test : 존재하지 않는 계좌번호 입력 
-			System.out.println("잔액조회:"+ dao.findBalanceByAccountNo("11", "1234"));
+			//System.out.println("잔액조회:"+ dao.findBalanceByAccountNo("11", "1234"));
 			
 			//2.NotMatchedPasswordException test: 잘못된 비번입력  
 			//System.out.println("잔액조회:"+ dao.findBalanceByAccountNo("1", "1235"));
