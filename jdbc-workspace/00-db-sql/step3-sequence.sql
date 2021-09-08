@@ -29,3 +29,10 @@ CREATE TABLE guestbook(
 CREATE SEQUENCE guestbook_seq;
 
 select * from guestbook;
+
+
+--시퀀스명.nextval
+SELECT guestbook_seq.nextval from dual;
+--시퀀스명.curval:단독으로 사용될 수 없고 nextval한 커넥션 내에서 currval을 사용할 수 있다(동일한 세션 내에서만 사용 가능)
+SELECT guestbook_seq.currval FROM dual;
+--

@@ -14,3 +14,12 @@ SELECT MIN(PRICE) FROM PRODUCT;
 SELECT COUNT(*) FROM MEMBER;
 
 SELECT name,price FROM product WHERE price>=1300 AND price<=2000 ORDER BY price ASC;
+
+--LIKE 연산자: 일부가 포함되는 내용을 검색하는 연산자
+--WHERE 컬럼명 LIKE '%검색키워드%'
+--% 0개 이상의 문자
+
+SELECT * FROM PRODUCT WHERE NAME LIKE '%면%';
+SELECT * FROM PRODUCT WHERE MAKER LIKE '%트진%';
+
+--어플리케이션 테스트:04-jdbc에서 TEstGuestBookDAO4
