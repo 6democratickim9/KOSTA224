@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+//함수 정의
+	function hello(){
+	console.log("hello 함수실행");
+}
+	function bye(message){
+		alert(message);
+	}
+	function testParam(info,num){
+		//window 객체의 function alert()함수
+		//window는 생략가능
+		window.alert(info+" "+num);
+	}
+</script>
+js 함수테스트<br><br>
+<input type="button" value="methodtest1" onclick="hello()">
+<input type="button" value="methodtest2" onclick="bye('farewell')">
+<input type="button" value="methodtest3" onclick="testParam('thankyou',7)">
+</body>
+</html>

@@ -29,6 +29,7 @@ public class NetServer3 {
 				br.close();
 				socket.close();
 			}
+		}
 			catch(Exception e) {
 				System.out.println(clientIp+"와 통신 중 예외발생"+e.getMessage());
 			
@@ -39,6 +40,7 @@ public class NetServer3 {
 		}
 		
 	}
+
 	public static void main(String[] args) {
 		try{
 			new NetServer3().go();
@@ -47,4 +49,5 @@ public class NetServer3 {
 			e.printStackTrace();
 		}
 	}
+
 }
