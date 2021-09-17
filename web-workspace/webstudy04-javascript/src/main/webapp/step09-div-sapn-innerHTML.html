@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#testDiv{
+		background-color: orange;
+	}
+</style>
+<script type="text/javascript">
+	function changeDivInfo(){
+		alert(document.getElementById("testDiv").innerHTML);
+		document.getElementById("testDiv").innerHTML="<h3>Happy Wednesday!</h3>";
+	}
+	function changeSpanInfo(){
+		var str1 = "즐거운 저녁식사";
+		$('#testSpan').html=str1;
+	}
+</script>
+</head>
+<body>
+<div id="testDiv">이 부분은 Testdiv영역입니다</div>
+<div>이 부분은 div영역입니다</div>
+<span id="testSpan">span영역이에용</span>
+<input type="button" value="divchange" onclick="changeDivInfo()">
+<input type="button" value="spanchange" onclick="changeSpanInfo()">
+</body>
+</html>
