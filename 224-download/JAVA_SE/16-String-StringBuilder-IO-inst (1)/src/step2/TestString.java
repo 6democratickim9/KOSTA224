@@ -3,7 +3,7 @@ package step2;
 public class TestString {
 	public static void main(String[] args) {
 		String name="아이유";
-		System.out.println(name.concat("님"));
+		System.out.println(name.concat("아이유"));
 		System.out.println(name.contains("이"));
 		System.out.println(name.contains("어"));
 		System.out.println(name.indexOf("유"));//2 index 반환 
