@@ -1,0 +1,224 @@
+﻿1. 아래의  java keyword에 대해 간단히 설명하세요
+package : 패키지는 비슷한 성격의 자바 클래스들을 모아 넣는 자바의 디렉토리
+import : 다른 패키지 안의 클래스를 사용하기 위한 키워드
+extends : 상속의 대표적인 형태로 부모의 메소드를 그대로 사용
+implements : 부모의 메서드를 오버라이딩하는 상속의 형태
+this : 객체, 자기 자신
+super : 자식 클래스가 부모 클래스로부터 상속받은 멤버를 참조할 때 사용하는 참조 변수
+static : 인스턴스 생성 없이 바로 사용가능하게 변수를 만들어주는 키워드
+ 
+ 
+
+
+
+
+
+
+2. 다음 예제의 실행결과를 쓰시오
+public class Test {
+              public static void main(String[] args) {
+                            StringBuilder sb = new StringBuilder("peace");
+                            String str = "java";
+                            sb.append("java");
+                            str.concat("peace");
+                            System.out.println(sb+","+str);
+              }
+}
+
+peacejava,java
+
+
+
+3.  다음 용어에 대해 간략히 설명하세요
+Object : 구현 대상
+ 
+Object와 Class의 관계 : 클래스에 포함 관계 -> 설계도와 설계도로 구현한 대상
+ 
+Object Oriented : 객체 지향, 객체의 관점
+
+
+ 
+UML : 통합 모델링 언어/ 객체 지향 프로그래밍 분야의 모델링 언어
+ 
+
+
+
+
+
+
+
+4.  메서드 오버로딩과  메서드 오버라이딩을 간단하게 설명하세요
+
+
+오버로딩은 기존에 없던 새로운 메서드를 정의하는 것
+오버라이딩은 상속 받은 메서드의 내용만 변경 하는 것
+
+
+다형성의 한 예
+
+
+
+5. Encapsulation 의 개념과 적용 시 어떤 장점이 있는 지 설명하세요
+
+
+
+
+
+객체의 속성과 행위를 하나로 묶고 실제 구현 내용은 은닉
+보안성(불필요한 부분 접근 안됨)
+결합도 낮아짐
+객체의 내부가 변경돼도 객체의 사용방법이 바뀌지 않음
+
+
+
+
+
+
+
+
+
+
+
+6. 테이블에 저장된 정보를 조회하기 위한 JDBC 개발단계에 대해  설명하세요 
+
+
+
+
+
+
+
+1. JDBC Driver loading
+2. Connection
+3. PreparedStatement
+4. SQL 실행: executeQuery()
+5. ResultSet
+6. close
+
+
+
+
+
+
+
+
+
+
+7. 아래 코드의 실행결과는?
+
+
+class Test {
+              public static void main(String args[]) {
+                            ArrayList list = new ArrayList();
+                            list.add("java");
+                            list.add("servlet");
+                            list.add("java");
+                            System.out.print(list.size()+"/");                             
+                            HashSet set = new HashSet();
+                            set.add("java");
+                            set.add("html");
+                            set.add("html");
+                            set.add("java");
+                            System.out.print(set.size()+"/");                             
+                            HashMap map = new HashMap();
+                            map.put("n", "j");
+                            map.put("c", "a");
+                            map.put("s", "v");
+                            map.put("n", "a");
+                            System.out.print(map.size());
+              }
+}
+	
+3/2/3
+
+
+8.  아래 코드의 실행 결과는?
+
+
+class Account{
+           public void withdraw(int money) throws Exception{
+                         if(money<=0)
+                                      throw new Exception();
+                         System.out.print("a");
+           }
+}
+public class Test {
+           public static void main(String[] args) {
+                         Account account=new Account();
+                         try{
+                                      account.withdraw(0);
+                                      System.out.print("b");                                       
+                         }catch(Exception e){
+                                      System.out.print("c");
+                         }finally{
+                                      System.out.print("d");
+                         }
+                         System.out.print("e");
+           }
+}
+	
+
+cde
+
+9. Polymorphism 의 개념에 대해 설명하세요( 간단한 사례와 함께 ) 
+
+
+
+
+하나의 객체가 여러 가지 타입을 가질 수 있는 것을 의미
+커비/마리오
+
+
+
+
+10. 다음은 접근 제어자를 나열한 것이다. 접근 범위가 넓은 범위에서 좁은 순으로 나열하세요            
+1. private  2. protected  3.public  4. default
+
+public>protected>default>private
+
+
+11. Thread의 개념에 대해 설명하세요  
+
+현재 실행중인 프로그램을 프로세스라고 하며 이런 프로세스 내의 내부에서 독립적으로 실행되는 작업단위를 스레드라고 한다
+
+
+12. 다음은 특정 자바 키워드에 대한 설명이다. (ㄱ)에 들어갈 자바 키워드는?
+ 
+두 개 이상의 스레드가 공유 자원에 접근하는 경우, 데이터의 일관성(consistency)을 위해 (ㄱ) 키워드를 이용하여 특정영역에서만 단일 스레드 환경으로 실행하도록 처리할 수 있다.
+	
+synchronized
+
+
+13. Java Interface 의 특징과 장점에 대해 설명하세요
+
+원소스 멀티유즈가 가능/캡슐화에 용이/특징: 메소드는 없고 변수만 할당되어 있음
+
+
+14. 멀티 스레딩이 필요한 이유를 채팅서버와 채팅클라이언트의 예를 들어 간략하게 설명하세요.
+
+
+	채팅 서버에서 단일 스레드만 사용하게 되면 다수의 클라이언트가 이용하게 되면 서버에 과부하가 올 수 있어 다수의 사용자가 이용하기 어렵다.
+	하지만 멀티 스레드 사용 시 다수의 사용자(클라이언트)가 모두 이용이 가능해진다
+
+
+
+15. 다음 코드의 실행 결과는?
+class A{
+                    A(){
+                                    System.out.println("A");
+                    }
+}
+class B extends A{
+                    B(){
+                                    System.out.println("B");
+                    }
+}
+class C extends B{
+                    C(){
+                                    System.out.println("C”);
+                    }
+}
+ public class Test {        
+                    public static void main(String[] args) {
+                                    new C();
+                    }
+}

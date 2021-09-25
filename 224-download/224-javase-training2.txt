@@ -1,0 +1,253 @@
+﻿1. 아래의  java keyword에 대해 간단히 설명하세요
+package : 
+import : 
+extends : 
+implements : 
+this : 
+super :
+static :
+ 
+ 
+
+
+
+
+
+
+2. 다음 예제의 실행결과를 쓰시오
+public class Test {
+              public static void main(String[] args) {
+                            StringBuilder sb = new StringBuilder("peace");
+                            String str = "java";
+                            sb.append("java");
+                            str.concat("peace");
+                            System.out.println(sb+","+str);
+              }
+}
+
+
+
+
+3.  다음 용어에 대해 간략히 설명하세요
+Object :
+ 
+Object와 Class의 관계 :
+ 
+Object Oriented :
+
+
+ 
+UML :
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+4.  메서드 오버로딩과  메서드 오버라이딩을 간단하게 설명하세요
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5. Encapsulation 의 개념과 적용 시 어떤 장점이 있는 지 설명하세요
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6. 테이블에 저장된 정보를 조회하기 위한 JDBC 개발단계에 대해  설명하세요 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7. 아래 코드의 실행결과는?
+
+
+class Test {
+              public static void main(String args[]) {
+                            ArrayList list = new ArrayList();
+                            list.add("java");
+                            list.add("servlet");
+                            list.add("java");
+                            System.out.print(list.size()+"/");                             
+                            HashSet set = new HashSet();
+                            set.add("java");
+                            set.add("html");
+                            set.add("html");
+                            set.add("java");
+                            System.out.print(set.size()+"/");                             
+                            HashMap map = new HashMap();
+                            map.put("n", "j");
+                            map.put("c", "a");
+                            map.put("s", "v");
+                            map.put("n", "a");
+                            System.out.print(map.size());
+              }
+}
+	
+
+
+
+
+
+
+
+8.  아래 코드의 실행 결과는?
+
+
+class Account{
+           public void withdraw(int money) throws Exception{
+                         if(money<=0)
+                                      throw new Exception();
+                         System.out.print("a");
+           }
+}
+public class Test {
+           public static void main(String[] args) {
+                         Account account=new Account();
+                         try{
+                                      account.withdraw(0);
+                                      System.out.print("b");                                       
+                         }catch(Exception e){
+                                      System.out.print("c");
+                         }finally{
+                                      System.out.print("d");
+                         }
+                         System.out.print("e");
+           }
+}
+	
+
+
+
+
+
+9. Polymorphism 의 개념에 대해 설명하세요( 간단한 사례와 함께 ) 
+
+
+10. 다음은 접근 제어자를 나열한 것이다. 접근 범위가 넓은 범위에서 좁은 순으로 나열하세요            
+1. private  2. protected  3.public  4. default
+
+
+
+
+11. Thread의 개념에 대해 설명하세요  
+
+
+
+
+12. 다음은 특정 자바 키워드에 대한 설명이다. (ㄱ)에 들어갈 자바 키워드는?
+ 
+두 개 이상의 스레드가 공유 자원에 접근하는 경우, 데이터의 일관성(consistency)을 위해 (ㄱ) 키워드를 이용하여 특정영역에서만 단일 스레드 환경으로 실행하도록 처리할 수 있다.
+	 
+
+
+13. Java Interface 의 특징과 장점에 대해 설명하세요 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14. 멀티 스레딩이 필요한 이유를 채팅서버와 채팅클라이언트의 예를 들어 간략하게 설명하세요.
+
+
+
+
+
+
+15. 다음 코드의 실행 결과는?
+class A{
+                    A(){
+                                    System.out.println("A");
+                    }
+}
+class B extends A{
+                    B(){
+                                    System.out.println("B");
+                    }
+}
+class C extends B{
+                    C(){
+                                    System.out.println("C”);
+                    }
+}
+ public class Test {        
+                    public static void main(String[] args) {
+                                    new C();
+                    }
+}
