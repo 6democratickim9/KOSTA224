@@ -27,7 +27,7 @@ public class ContextTest1 extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=utf-8");
-		PrintWriter out = response.getWriter();
+		PrintWriter out = response.getWriter();//printwriter의 속성을 out에 할당하고 response의 getWriter
 		String name=getServletConfig().getServletName();//servlet config에서 servletname으로 들어가 서블렛의 이름을 가져온다
 		out.println("<h3>"+name+"에서 ServletContext를 테스트</h3>");
 		String info=getServletConfig().getServletContext().getInitParameter("security");

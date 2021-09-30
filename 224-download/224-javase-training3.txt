@@ -1,0 +1,340 @@
+﻿1. 아래의  java keyword에 대해 간단히 설명하세요
+package : 
+import : 
+extends : 
+implements : 
+this : 
+super :
+static :
+ 
+ 
+
+
+
+
+
+
+2. 다음 예제의 실행결과를 쓰시오
+public class Test {
+              public static void main(String[] args) {
+                            StringBuilder sb = new StringBuilder("peace");
+                            String str = "java";
+                            sb.append("java");
+                            str.concat("peace");
+                            System.out.println(sb+","+str);
+              }
+}
+
+
+
+
+3.  다음 용어에 대해 간략히 설명하세요
+Object :
+ 
+Object와 Class의 관계 :
+ 
+Object Oriented :
+
+
+ 
+UML :
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+4.  메서드 오버로딩과  메서드 오버라이딩을 간단하게 설명하세요
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5. Encapsulation 의 개념과 적용 시 어떤 장점이 있는 지 설명하세요
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6. 테이블에 저장된 정보를 조회하기 위한 JDBC 개발단계에 대해  설명하세요 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7. 아래 코드의 실행결과는?
+
+
+class Test {
+              public static void main(String args[]) {
+                            ArrayList list = new ArrayList();
+                            list.add("java");
+                            list.add("servlet");
+                            list.add("java");
+                            System.out.print(list.size()+"/");                             
+                            HashSet set = new HashSet();
+                            set.add("java");
+                            set.add("html");
+                            set.add("html");
+                            set.add("java");
+                            System.out.print(set.size()+"/");                             
+                            HashMap map = new HashMap();
+                            map.put("n", "j");
+                            map.put("c", "a");
+                            map.put("s", "v");
+                            map.put("n", "a");
+                            System.out.print(map.size());
+              }
+}
+	
+
+
+
+
+
+
+
+8.  아래 코드의 실행 결과는?
+
+
+class Account{
+           public void withdraw(int money) throws Exception{
+                         if(money<=0)
+                                      throw new Exception();
+                         System.out.print("a");
+           }
+}
+public class Test {
+           public static void main(String[] args) {
+                         Account account=new Account();
+                         try{
+                                      account.withdraw(0);
+                                      System.out.print("b");                                       
+                         }catch(Exception e){
+                                      System.out.print("c");
+                         }finally{
+                                      System.out.print("d");
+                         }
+                         System.out.print("e");
+           }
+}
+	
+
+
+
+
+
+9. Polymorphism 의 개념에 대해 설명하세요( 간단한 사례와 함께 ) 
+
+
+10. 다음은 접근 제어자를 나열한 것이다. 접근 범위가 넓은 범위에서 좁은 순으로 나열하세요            
+1. private  2. protected  3.public  4. default
+
+
+
+
+11. Thread의 개념에 대해 설명하세요  
+
+
+
+
+12. 다음은 특정 자바 키워드에 대한 설명이다. (ㄱ)에 들어갈 자바 키워드는?
+ 
+두 개 이상의 스레드가 공유 자원에 접근하는 경우, 데이터의 일관성(consistency)을 위해 (ㄱ) 키워드를 이용하여 특정영역에서만 단일 스레드 환경으로 실행하도록 처리할 수 있다.
+	 
+
+
+13. Java Interface 의 특징과 장점에 대해 설명하세요 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14. 멀티 스레딩이 필요한 이유를 채팅서버와 채팅클라이언트의 예를 들어 설명하세요.
+
+
+
+
+
+
+
+
+
+
+15. 다음 코드의 실행 결과는?
+class A{
+                    A(){
+                                    System.out.println("A");
+                    }
+}
+class B extends A{
+                    B(){
+                                    System.out.println("B");
+                    }
+}
+class C extends B{
+                    C(){
+                                    System.out.println("C”);
+                    }
+}
+ public class Test {        
+                    public static void main(String[] args) {
+                                    new C();
+                    }
+}
+
+
+
+
+16.  abstract class 와 abstract method의 특징에 대해 설명하세요
+
+class: 부모 클래스의 역할에 집중, 자신은 new로 직접 객체화 될 수 없지만 자식 클래스를 통해 멤버를 물려준다
+추상 클래스는 직접 객체화 될 수 없다
+단, 상속을 통한 자식 객체에서 super()를 이용해 생성은 가능
+
+method: 하위(자식) 클래스에게 구현을 강제
+	구현부가 존재하지 않는다,
+	부모 차원에서 구현할 수 없는 기능이지만 반드시 자식 클래스에게 구현을 강제해야 할 때 사용한다,
+	부모 클래스에 abstract 메소드가 존재하면
+	자식 클래스는 abstract 메소드를 구현하거나 자신이 abstract class로 선언되어야 한다(직접 객체화 불가),
+	하나 이상의 abstract 메소드가 클래스 내에 존재하면 해당 클래스는 abstract class가 되어야 한다
+
+17. List/Set / Map/ Stack/ Queue 자료구조의 특징에 대해 간단히 설명하세요 
+
+List: 인덱스로 관리, 요소의 저장 순서가 유지됩니다, 같은 요소의 중복 저장을 허용합니다. 
+Set:  요소의 저장 순서를 유지하지 않습니다, 중복 저장을 허용하지 않습니다
+Map: 요소의 저장 순서를 유지하지 않습니다, 키는 중복을 허용하지 않지만, 값의 중복은 허용합니다
+Stack: 후입선출(LIFO)
+Queue: 선입선출(FIFO)
+
+
+
+18. 객체 직렬화에 대해 간단히  설명하세요
+ 
+자바 직렬화란 자바 시스템 내부에서 사용되는 객체 또는 데이터를 외부의 자바 시스템에서도 사용할 수 있도록
+바이트(byte) 형태로 데이터 변환하는 기술과
+바이트로 변환된 데이터를 다시 객체로 변환하는 기술(역직렬화)을 아울러서 이야기합니다.
+
+19. 다음 용어에 대해 간단히 설명하세요 
+DDL 
+데이터베이스를 정의하는 언어이며, 데이터리를 생성, 수정, 삭제하는 등의 데이터의 전체의 골격을 결정하는 역할을 하는 언어 입니다
+
+DML 
+정의된 데이터베이스에 입력된 레코드를 조회하거나 수정하거나 삭제하는 등의 역할을 하는 언어를 말합니다.
+
+DCL 
+데이터베이스에 접근하거나 객체에 권한을 주는등의 역할을 하는 언어를 입니다.
+
+
+
+20.  Instance variable , Local variable , Static variable 의 특징에 대해 각각 설명하세요 
+
+Instance variable
+class 차원에서 선언, 초기화 객체의 속성정보를 저장(heap 영역에 저장)
+
+Local variable
+메소드 또는 생성자에서 선언되고 초기화된다(스택 저장)
+
+Static variable
+객체 생성없이 클래스 로딩만으로 메모리에 적재(meta space 저장)
+
+21.  다음 코드의 실행 결과는? 옹성우
+ class Person{
+           String name="아이유";            
+           Person(String name){
+                         this.name=name;
+           }
+}
+public class Test {
+           public static void main(String[] args) {
+                         Person p1=new Person("장기하");
+                         Person p2=new Person("옹성우");
+                         p1=p2;
+                         System.out.println(p1.name);
+           }
+}
+	
+
+
+
+22. 다음 용어에 대해 간단히 설명하세요 
+ERD : 
+Join SQL : 
+Primary key :
+Foreign key :
+Commit :
+Rollback :
+Group by ~ having :
