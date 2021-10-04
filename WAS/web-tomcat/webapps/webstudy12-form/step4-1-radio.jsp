@@ -22,7 +22,7 @@ list.add("생선찜");
 		%>
 		<input type="radio" name="menu" value="<%=list.get(i)%>" required="required"><%=list.get(i)%><br>
 		<%} %>
-		<input type="submit" name="submit">
+		<input type="submit" name="order">
 	</form>
 </body>
 </html>
