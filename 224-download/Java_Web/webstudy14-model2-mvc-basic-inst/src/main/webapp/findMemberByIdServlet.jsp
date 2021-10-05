@@ -8,12 +8,8 @@
 </head>
 <body>
 <script type="text/javascript">
-	function sednLine(){
-		let lineComp=document.getElementById("line");
-		if(lineComp.value!=""){
-			document.getElementById("subway").submit();
-		}
-	}
+alert("<%=request.getParameter("memberId")%>there is no information of id ");
 </script>
+
 </body>
 </html>

@@ -47,7 +47,7 @@ public class MemberCountServlet extends HttpServlet {
 			//클라이언트에게 서비스하기 위한 부분
 			response.setContentType("text/html;charset=utf-8");
 			PrintWriter out = response.getWriter();
-			out.println("members"+count+"numbers");
+			out.println("numbers of members: "+count);
 			out.close();
 			pstmt.close();
 			con.close();

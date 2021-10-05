@@ -16,7 +16,7 @@ list.add("생선찜");
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="step4-radio-action.jsp" method="post">
+	<form action="step4-2-radio-action.jsp" method="post">
 		<%
 		for (int i = 0; i < list.size(); i++) {
 		%>

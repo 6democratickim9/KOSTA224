@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,28 +9,29 @@
 
 </head>
 <body>
-<%
-String ma[] = request.getParameterValues("menu");
-%>
-
-<table>
-<thead>
-<tr>
-<th>No</th>
-<th>Menu</th>
-</tr>
-</thead>
-<tbody>
-<%
-for(int i =0;i<ma.length;i++){
+	<%
+	String ma[] = request.getParameterValues("menu");//String 형태로 되어있는 ma[]
 	%>
-	<tr>
-	<td><%=i+1%></td>
-	<td><%=ma[i]%></td>
-	</tr>
-<%
-}
-%></tbody>
-</table>
+
+	<table>
+		<thead>
+			<tr>
+				<th>No</th>
+				<th>Menu</th>
+			</tr>
+		</thead>
+		<tbody>
+			<%
+			for (int i = 0; i < ma.length; i++) {
+			%>
+			<tr>
+				<td><%=i + 1%></td>
+				<td><%=ma[i]%></td>
+			</tr>
+			<%
+			}
+			%>
+		</tbody>
+	</table>
 </body>
 </html>

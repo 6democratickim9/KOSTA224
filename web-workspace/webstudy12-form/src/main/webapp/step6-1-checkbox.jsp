@@ -17,8 +17,8 @@
 	<script type="text/javascript">
 	function checkMenu(){
 		let flag=false;
-		let m = document.getElementsByName("checkbox");
-		for(let i=0;i<m.length;i++)
+		let m = document.getElementsByName("menu");
+		for(let i=0;i<m.length;i++){
 		if(m[i].checked){
 			flag=true;
 			break;
@@ -31,7 +31,8 @@
 }
 	
 </script>
-	<form action="step6-2-checkbox-action.jsp" method="get">
+	<form action="step6-2-checkbox-action.jsp" method="get"
+		onsubmit="return checkMenu()">
 		<%
 		for (int i = 0; i < list.size(); i++) {
 		%>
@@ -39,10 +40,7 @@
 		<%
 		}
 		%>
-		<input type="checkbox" name="menu"><br> <input
-			type="submit" name="order"><br>
-
-	<input type="submit" value="order">
+		<input type="submit" value="order">
 	</form>
 </body>
 </html>

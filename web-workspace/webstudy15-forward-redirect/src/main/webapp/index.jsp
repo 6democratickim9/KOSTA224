@@ -7,13 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<script type="text/javascript">
-	function sednLine(){
-		let lineComp=document.getElementById("line");
-		if(lineComp.value!=""){
-			document.getElementById("subway").submit();
-		}
-	}
-</script>
+<a href="ForwardTestServlet">forward 이동방식 테스트</a><br><br>
+<a href="RedirectTestServlet">redirect 이동방식 테스트</a><br><br>
 </body>
 </html>
