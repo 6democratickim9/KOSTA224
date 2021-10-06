@@ -49,3 +49,10 @@
 0:0:0:0:0:0:0:1 - - [05/Oct/2021:02:34:54 +0900] "GET /favicon.ico HTTP/1.1" 200 21630
 0:0:0:0:0:0:0:1 - - [05/Oct/2021:02:34:55 +0900] "GET /webstudy09-servlet-Annotation-Config/MemberCountServlet HTTP/1.1" 200 23
 0:0:0:0:0:0:0:1 - - [05/Oct/2021:02:34:55 +0900] "GET /favicon.ico HTTP/1.1" 200 21630
+127.0.0.1 - - [05/Oct/2021:22:13:03 +0900] "GET / HTTP/1.1" 200 11354
+0:0:0:0:0:0:0:1 - - [05/Oct/2021:22:13:04 +0900] "GET /webstudy15-forward-redirect-inst/index.jsp HTTP/1.1" 200 332
+0:0:0:0:0:0:0:1 - - [05/Oct/2021:22:13:04 +0900] "GET /webstudy15-forward-redirect-inst/forward-redirect.png HTTP/1.1" 200 63725
+0:0:0:0:0:0:0:1 - - [05/Oct/2021:22:13:06 +0900] "GET /webstudy15-forward-redirect-inst/RedirectTestServlet HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [05/Oct/2021:22:13:06 +0900] "GET /webstudy15-forward-redirect-inst/redirect-result.jsp HTTP/1.1" 200 181
+0:0:0:0:0:0:0:1 - - [05/Oct/2021:22:13:08 +0900] "GET /webstudy15-forward-redirect-inst/ForwardTestServlet HTTP/1.1" 200 198
+0:0:0:0:0:0:0:1 - - [05/Oct/2021:22:15:54 +0900] "GET /webstudy15-forward-redirect-inst/index.jsp HTTP/1.1" 200 332
