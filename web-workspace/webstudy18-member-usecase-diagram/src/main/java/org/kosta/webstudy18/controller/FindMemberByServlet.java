@@ -1,11 +1,17 @@
 package org.kosta.webstudy18.controller;
 
 import java.io.IOException;
+import java.lang.reflect.Member;
+import java.sql.SQLException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.kosta.webstudy18.model.MemberDAO;
+import org.kosta.webstudy18.model.MemberVO;
 
 /**
  * Servlet implementation class FindMemberByServlet
@@ -13,29 +19,22 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/FindMemberByServlet")
 public class FindMemberByServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public FindMemberByServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
+		String id = request.getParameter("memberId");
+		try{
+			MemberVO vo = MemberDAO.getInstance().FindMemberById(id);
+			String path = null;
+			if(vo==null){
+				path="findbyid-fail.jsp";
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+			}
+			else{
+				request.setAttribute("memberVO",vo);
+				path="findbyid-ok.jsp";
+			}
+			request.getRequestDispatcher(path).forward(request.response);
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
 
 }
