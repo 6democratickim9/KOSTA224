@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function testCheckbox(){
+		let info="";
+		let ma = document.getElementsByName("movie");
+		for (let a=0;a<ma.length;a++){
+			if(ma[a].checked){
+				info+=ma[a].value+"";
+				
+			}
+		}
+		if(info=="")
+			alert("choose the movie");
+		else
+			alert(info+" choosed");
+	}
+	</script>
+</head>
+<body>
+<form>
+	<input type="checkbox" name="movie" value="About Time">About Time<br>
+	<input type="checkbox" name="movie" value="500days of Summer">500Days of Summer<br>
+	<input type="checkbox" name="movie" value="Zootopia">Zootopia<br>
+	<input type="button" value="select" onclick="testCheckbox()">
+</form>
+</body>
+</html>

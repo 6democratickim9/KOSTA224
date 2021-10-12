@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>hideen tag</title>
+</head>
+<body>
+	<form action="step14-hidden-action.jsp">
+		<input type="hidden" name="command" value="insert">
+		<!-- Hidden tag is the hidden attribute that doesn't appear on the client's screen, 
+It is used when sending certain names and values.
+Or to control certain information in js
+ -->
+	</form>
+	<hr>
+	<form action="step14-hidden-action.jsp">
+		<input type="hidden" name="command" value="delete">
+		<button>transmit2</button>
+	</form>
+	<hr>
+	<table border="1">
+		<tr>
+			<td>2</td>
+			<td>happy tuesday</td>
+			<td>
+				<form action="step14-hidden-action2.jsp">
+				<input type="hidden" name="no" value="1">
+					<button>delete</button>
+				</form>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function checkForm(){
+		if(document.getElementById("userName").value.trim()==""){
+			alert("write your name");
+		}else if(isNaN(document.getElementById("depositMoney").value)){
+			alert("money should be numbers");
+		}else{
+			alert("credit to your account is successfully finished");
+		}
+	}
+</script>
+</head>
+<body>
+<form>
+name <input type="text" id="userName">
+money<input type="text" id="depositMoney">
+<button type="button" onclick="checkForm()">deposit</button>
+</form>
+</body>
+</html>

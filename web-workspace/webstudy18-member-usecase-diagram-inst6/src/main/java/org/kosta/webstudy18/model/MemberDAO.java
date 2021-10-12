@@ -119,6 +119,25 @@ public class MemberDAO {
 			closeAll(pstmt, con);
 		}
 	}
+	
+	public boolean idcheck(String id) throws SQLException{
+		boolean flag=false;
+		Connection con= null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			con=DriverManager.getConnection(url,username,userpass);
+			String sql = "select count(*) from member where id=?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs=pstmt.executeQuery();
+			if(rs.next()&&rs.getInt(1)==1)
+				flag=true;
+		}finally {
+			closeAll(rs,pstmt,con);
+			
+		}return flag;
+	}
 }
 
 
