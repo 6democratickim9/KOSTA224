@@ -1,0 +1,434 @@
+﻿1. 아래의  java keyword에 대해 간단히 설명하세요
+package : 
+import : 
+extends : 
+implements : 
+this : 
+super :
+static :
+ 
+ 
+
+
+
+
+
+
+2. 다음 예제의 실행결과를 쓰시오
+public class Test {
+              public static void main(String[] args) {
+                            StringBuilder sb = new StringBuilder("peace");
+                            String str = "java";
+                            sb.append("java");
+                            str.concat("peace");
+                            System.out.println(sb+","+str);
+              }
+}
+
+
+
+
+3.  다음 용어에 대해 간략히 설명하세요
+Object :
+ 
+Object와 Class의 관계 :
+ 
+Object Oriented :
+
+
+ 
+UML :
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+4.  메서드 오버로딩과  메서드 오버라이딩을 간단하게 설명하세요
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5. Encapsulation 의 개념과 적용 시 어떤 장점이 있는 지 설명하세요
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6. 테이블에 저장된 정보를 조회하기 위한 JDBC 개발단계에 대해  설명하세요 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7. 아래 코드의 실행결과는?
+
+
+class Test {
+              public static void main(String args[]) {
+                            ArrayList list = new ArrayList();
+                            list.add("java");
+                            list.add("servlet");
+                            list.add("java");
+                            System.out.print(list.size()+"/");                             
+                            HashSet set = new HashSet();
+                            set.add("java");
+                            set.add("html");
+                            set.add("html");
+                            set.add("java");
+                            System.out.print(set.size()+"/");                             
+                            HashMap map = new HashMap();
+                            map.put("n", "j");
+                            map.put("c", "a");
+                            map.put("s", "v");
+                            map.put("n", "a");
+                            System.out.print(map.size());
+              }
+}
+	
+
+
+
+
+
+
+
+8.  아래 코드의 실행 결과는?
+
+
+class Account{
+           public void withdraw(int money) throws Exception{
+                         if(money<=0)
+                                      throw new Exception();
+                         System.out.print("a");
+           }
+}
+public class Test {
+           public static void main(String[] args) {
+                         Account account=new Account();
+                         try{
+                                      account.withdraw(0);
+                                      System.out.print("b");                                       
+                         }catch(Exception e){
+                                      System.out.print("c");
+                         }finally{
+                                      System.out.print("d");
+                         }
+                         System.out.print("e");
+           }
+}
+	
+
+
+
+
+
+9. Polymorphism 의 개념에 대해 설명하세요( 간단한 사례와 함께 ) 
+
+
+10. 다음은 접근 제어자를 나열한 것이다. 접근 범위가 넓은 범위에서 좁은 순으로 나열하세요            
+1. private  2. protected  3.public  4. default
+
+
+
+
+11. Thread의 개념에 대해 설명하세요  
+
+
+
+
+12. 다음은 특정 자바 키워드에 대한 설명이다. (ㄱ)에 들어갈 자바 키워드는?
+ 
+두 개 이상의 스레드가 공유 자원에 접근하는 경우, 데이터의 일관성(consistency)을 위해 (ㄱ) 키워드를 이용하여 특정영역에서만 단일 스레드 환경으로 실행하도록 처리할 수 있다.
+	 
+
+
+13. Java Interface 의 특징과 장점에 대해 설명하세요 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14. 멀티 스레딩이 필요한 이유를 채팅서버와 채팅클라이언트의 예를 들어 설명하세요.
+
+
+
+
+
+
+
+
+
+
+15. 다음 코드의 실행 결과는?
+class A{
+                    A(){
+                                    System.out.println("A");
+                    }
+}
+class B extends A{
+                    B(){
+                                    System.out.println("B");
+                    }
+}
+class C extends B{
+                    C(){
+                                    System.out.println("C”);
+                    }
+}
+ public class Test {        
+                    public static void main(String[] args) {
+                                    new C();
+                    }
+}
+
+
+
+
+16.  abstract class 와 abstract method의 특징에 대해 설명하세요
+
+
+
+
+
+
+
+
+17. List/Set / Map/ Stack/ Queue 자료구조의 특징에 대해 간단히 설명하세요 
+
+
+
+
+
+
+
+
+18. 객체 직렬화에 대해 간단히  설명하세요
+ 
+
+
+19. 다음 용어에 대해 간단히 설명하세요 
+DDL 
+
+
+DML 
+
+
+DCL 
+
+
+
+
+20.  Instance variable , Local variable , Static variable 의 특징에 대해 각각 설명하세요 
+
+
+
+
+
+
+
+
+21.  다음 코드의 실행 결과는?
+ class Person{
+           String name="아이유";            
+           Person(String name){
+                         this.name=name;
+           }
+}
+public class Test {
+           public static void main(String[] args) {
+                         Person p1=new Person("장기하");
+                         Person p2=new Person("옹성우");
+                         p1=p2;
+                         System.out.println(p1.name);
+           }
+}
+	
+옹성우
+
+
+22. 다음 용어에 대해 간단히 설명하세요 
+ERD : 개체 관계 모델링 즉 데이터 모델링을 위한 다이어그램 
+Join SQL : 둘 이상의 테이블을 서로 연결해서 데이터를 검색하는 방법
+Primary key : 주 키, 관계형 DB에서 레코드의 고유한 식별자로 사용
+Foreign key : 서로 다른 두 테이블을 연걸하는데 사용되는 키
+         외래키를 제공하는 테이블(부모 테이블), 외래키가 포함된 테이블(자식 테이블)
+
+Commit : 저장되지 않은 모든 데이터를 DB에 저장하고 현재 진행중인  트랜잭션을 종료하는 명령어
+
+Rollback : commit 이전에 데이터 변경 사항이 모두 취소되고, 이전 상태로 복구시키는 명령어
+
+Group by ~ having : 데이터를 그룹별로 묶어서 건수나 합계를 얻을수 있으며, 
+        having 절은 원하는 그룹조건의 결과만 필터링할 수 있음
+
+
+
+
+
+
+23. 다음 기술의 역할에 대해 간단히 설명하세요 
+HTML : 사용자가 보는 웹페이지를 구조화하고, 브라우저로 하여금 인식할 수 있도록 하는 마크업 언어
+
+CSS :  HTML 요소들이 어떻게 보이는지를 정의하는데 사용하는 스타일 시트 언어
+
+JavaScript : 객체 기반의 스크립트 프로그래밍 언어로,
+      웹브라우저 상단에서 동작하며 사용자에게 동적인 UI를 제공할 수 있다
+        
+DOM : XML이나 HTML 문서에 접근하기 위한 일종의 인터페이스로,
+         문서 내의 모든 요소를 정의하고 각각의 요소에 접근하는 방법을 제공
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+사랑하면 알게 되고
+알게 되면 보이나니
+그때 보이는 것은 예전과는 다르더라
+
+
+
+
+
+
+
+
+
+
+24. 다음 코드의 실행결과는? SmartPhone,SmartPhone
+class Item{
+ private String name;
+ public Item(String name) {
+              this.name = name;
+}
+public void setName(String name){
+  this.name=name;
+ }
+ public String getName(){
+  return name;
+ }
+}
+class  Test{
+ public static void passOne(Item item){
+  item.setName("SmartPhone");
+ }
+ public static void passTwo(Item item){
+  item=new Item("NoteBook");
+ }
+ public static void main(String[] args) {
+  Item item=new Item("Car");
+  passOne (item);                    
+  System.out.print(item.getName()+",");
+  passTwo (item);
+  System.out.print(item.getName());
+ }}
+	
+
+25. HTTP Request Method인 Get 방식과 Post 방식의 특징에 대해 설명하시오 
+- Get : URL에 변수(데이터)를 포함시켜 요청한다.
+	데이터를 header에 포함하여 전송한다.
+	URL에 데이터가 노출되어 보안에 취약하다 (quert의 이름과 값이 연결되어 표현됨).
+	전송하는 길이에 제한이 있다.
+	쿼리스트링으로 전송이 가능하다. 
+
+- Post : URL에 변수(데이터)를 노출시키지 않고 요청한다.
+	데이터를 body에 포함시킨다.
+	URL에 데이터가 노출되지 않아서 보안이 가능하다.
+	전송하는 길이에 제한이 없다.
+
+
+
+
+
+
+
+
+26. Servlet LifeCycle에 대해 설명하시오
+- 1. 클라이언트의 요청이 오면 Servlet 클래스가 로딩되어 요청에 대한 Servlet 객체가 생성
+  2. init() - 서블릿은 init 메서드를 호출해 초기화
+  3. service() - 클라이언트(웹 브라우저)의 요청 처리
+  4. destroy() - 서블릿이 종료되기 직전에 호출되어 Servlet을 제거한다.
+
