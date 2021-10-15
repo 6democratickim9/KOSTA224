@@ -18,6 +18,7 @@ class Youtube implements Player{
 public class TestAutoCreateInstance {
 	public static void main(String[] args) {
 		String info = "test.relflection.CDPlayer";
+		
 	}
 
 }
