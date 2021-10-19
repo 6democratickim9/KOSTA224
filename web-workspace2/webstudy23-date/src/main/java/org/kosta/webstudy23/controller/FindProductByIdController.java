@@ -8,6 +8,7 @@ public class FindProductByIdController implements Controller {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String id=request.getParameter("productId");
+		ProductVo pvo=ProductDAO.getInst
 	}
 
 }
