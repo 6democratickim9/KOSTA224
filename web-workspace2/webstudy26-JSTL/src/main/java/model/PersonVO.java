@@ -3,6 +3,14 @@ package model;
 public class PersonVO {
 	private String name;
 	private int age;
+	private CarVO carVO;//has a relationship(aggregation or composition)
+	
+	public PersonVO(String name, int age, CarVO carVO) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.carVO = carVO;
+	}
 	public String getName() {
 		return name;
 	}
@@ -23,6 +31,12 @@ public class PersonVO {
 		super();
 		this.name = name;
 		this.age = age;
+	}
+	public CarVO getCarVO() {
+		return carVO;
+	}
+	public void setCarVO(CarVO carVO) {
+		this.carVO = carVO;
 	}
 
 }

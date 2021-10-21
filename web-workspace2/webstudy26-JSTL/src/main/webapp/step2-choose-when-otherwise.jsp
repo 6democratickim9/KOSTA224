@@ -17,7 +17,7 @@ request.setAttribute("pvo", new PersonVO("IU", 30));
 		<c:when test="${requestScope.pvo.name=='IU'}">
 		IU is ${requestScope.pvo.age } y.o
 	</c:when>
-		<c:when test="${requestScopr.pvo.name='SON' }">
+		<c:when test="${requestScope.pvo.name='SON' }">
 		SON ${pvo.age}
 	</c:when>
 		<c:otherwise>

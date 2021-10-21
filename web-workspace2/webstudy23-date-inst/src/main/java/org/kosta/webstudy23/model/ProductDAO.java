@@ -1,4 +1,4 @@
-package org.kosta.webstudy23.model;
+package org.kosta.webstudy27.model;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
