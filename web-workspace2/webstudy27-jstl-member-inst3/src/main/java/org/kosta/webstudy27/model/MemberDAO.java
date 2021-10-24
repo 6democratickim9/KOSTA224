@@ -92,29 +92,28 @@ public class MemberDAO {
 		return list;
 	}
 	public void updateMember(MemberVO vo) throws SQLException{
-		Connection con = null;
-		PreparedStatement pstmt = null;	
+		Connection con=null;
+		PreparedStatement pstmt=null;
 		try {
-			con = dataSource.getConnection();
-			String sql = "update mvc_member set password=?, name=?, address =?, birthday to=to_date(?,'YYYY-MM-DD') where id=?";
-			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1,vo.getPassword());
-			pstmt.setString(2,vo.getName());
-			pstmt.setString(3,vo.getAddress());
-			pstmt.setString(4,vo.getBirthday());
-			pstmt.setString(5,vo.getId());
+			con=dataSource.getConnection();
+			String sql="update mvc_member set password=?,name=?,address=?,birthday=to_date(?,'YYYY-MM-DD')  where id=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, vo.getPassword());
+			pstmt.setString(2, vo.getName());
+			pstmt.setString(3, vo.getAddress());
+			pstmt.setString(4, vo.getBirthday());
+			pstmt.setString(5, vo.getId());
 			pstmt.executeUpdate();
-					
-		}finally{
+		}finally {
 			closeAll(pstmt, con);
 		}
 	}
 	public void registerMember(MemberVO vo) throws SQLException{
-		Connection con = null;
-		PreparedStatement pstmt = null;
+		Connection con=null;
+		PreparedStatement pstmt=null;		
 		try {
 			con=dataSource.getConnection();
-			StringBuilder sql = new StringBuilder("insert into mvc_member(id,password,name,address,birthday,regdate)");
+			StringBuilder sql=new StringBuilder("insert into mvc_member(id,password,name,address,birthday,regdate) ");
 			sql.append("values(?,?,?,?,to_date(?,'YYYY-MM-DD'),sysdate)");
 			pstmt=con.prepareStatement(sql.toString());
 			pstmt.setString(1, vo.getId());
@@ -127,7 +126,60 @@ public class MemberDAO {
 			closeAll(pstmt, con);
 		}
 	}
+	// 아이디가 존재하면 true , 존재하지 않으면 false를 반환 
+	public boolean checkId(String id) throws SQLException {
+		boolean result=false;
+		Connection con=null;
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		try {
+			con=dataSource.getConnection();
+			String sql="select count(*) from mvc_member where id=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs=pstmt.executeQuery();
+			if(rs.next()&&rs.getInt(1)==1)
+				result=true;
+		}finally {
+			closeAll(rs, pstmt, con);
+		}
+		return result;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -29,6 +29,32 @@ select name,address,to_char(birthday,'YYYY.MM.DD') from mvc_member where id='jav
 -- findMemberListByAddress 
 select id,name,to_char(birthday,'YYYY.MM.DD') from mvc_member where address='오리'
 
+select * from MVC_MEMBER;
+-- update member 
+update mvc_member set password='b',name='강하늘2',address='판교',birthday=to_date('2021-10-22','YYYY-MM-DD')  where id='java2';
+
+
+-- id 중복확인 , 존재하면 1 , 없으면 0 
+select count(*) from mvc_member where id='java'; 
+select count(*) from mvc_member where id='java7';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

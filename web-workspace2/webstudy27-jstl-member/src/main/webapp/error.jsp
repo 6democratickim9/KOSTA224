@@ -5,12 +5,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>findbyid-fail</title>
+<title>error</title>
 </head>
-<body>
-<script type="text/javascript">
-	alert("${param.id} 아이디에 해당하는 회원이 없습니다");
-	location.href="index.jsp";
-</script>
+<body bgcolor="yellow">
+시스템 점검중~ ( 콘솔 확인 )
 </body>
 </html>
