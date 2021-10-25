@@ -58,7 +58,7 @@ public class MemberDAO {
 			StringBuilder sql=new StringBuilder("select name,address,to_char(birthday,'YYYY-MM-DD') "); 
 			sql.append("from mvc_member where id=? and password=?");
 			pstmt=con.prepareStatement(sql.toString());
-			pstmt.setString(1, id);
+			pstmt.setString(1, id); 
 			pstmt.setString(2, password);
 			rs=pstmt.executeQuery();
 			if(rs.next())
