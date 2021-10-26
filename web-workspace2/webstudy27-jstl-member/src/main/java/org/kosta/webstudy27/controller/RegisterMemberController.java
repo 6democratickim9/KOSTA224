@@ -10,15 +10,13 @@ public class RegisterMemberController implements Controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		// TODO Auto-generated method stub
-		String id = request.getParameter("id");
-		String password = request.getParameter("password");
-		String name = request.getParameter("name");
-		String address = request.getParameter("address");
-		String birthday = request.getParameter("birthday");
-		MemberVO vo = new MemberVO(id,password,name,address,birthday,null);
+		String id=request.getParameter("id");
+		String password=request.getParameter("password");
+		String name=request.getParameter("name");
+		String address=request.getParameter("address");
+		String birthday=request.getParameter("birthday");
+		MemberVO vo=new MemberVO(id,password,name,address,birthday,null);
 		MemberDAO.getInstance().registerMember(vo);
-		return null;
+		return "redirect:register-result.jsp";
 	}
-
 }
