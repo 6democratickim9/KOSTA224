@@ -9,5 +9,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-main</body>
+<h3>Model2MVC 사원관리</h3>
+현재 총 사원수 ${requestScope.empTotalCount }명
+<jsp:forward page="EmployeeListController.do"/>사원명단보기
+</body>
 </html>

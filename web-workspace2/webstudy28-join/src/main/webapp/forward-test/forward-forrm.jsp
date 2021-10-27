@@ -9,5 +9,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-main</body>
+<form action="forward-result.jsp">
+<input type="number" name="age" placeholder="age" required="required">
+<button>submit</button>
+</form>
+</body>
 </html>

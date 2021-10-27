@@ -9,5 +9,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-main</body>
+<jsp:forward page="HomeController.do"/>
+</body>
 </html>

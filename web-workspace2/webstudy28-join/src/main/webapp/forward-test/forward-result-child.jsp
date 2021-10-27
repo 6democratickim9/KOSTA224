@@ -9,5 +9,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-main</body>
+<body bgcolor="yellow">
+${param.age}세 미성년자 입니다
+</body>
+</body>
 </html>

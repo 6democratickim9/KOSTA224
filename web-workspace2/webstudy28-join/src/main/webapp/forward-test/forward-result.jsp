@@ -9,5 +9,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-main</body>
+${param.age}
+<c:choose>
+<c:when test="${param.age>=19}">
+	${param.age}세 성인입니다
+	</c:when>
+	<c:otherwise>
+		<jsp:forward page="forward-result-child.jsp"/>
+	</c:otherwise>
+
+</c:choose>
+</body>
 </html>
