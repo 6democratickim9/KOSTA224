@@ -16,7 +16,7 @@
 <body>
 
 <div class="container-fluid pt-3">
-<nav class="navbar navbar-expand-sm bg-dark navbar-light">
+<nav class="navbar navbar-expand-sm bg-primary text-white navbar-light">
   <ul class="navbar-nav">
     <li class="nav-item active">
       <a class="nav-link" href="#">Home</a>

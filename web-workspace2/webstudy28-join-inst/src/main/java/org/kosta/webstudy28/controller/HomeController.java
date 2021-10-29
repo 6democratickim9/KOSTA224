@@ -9,8 +9,7 @@ public class HomeController implements Controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		int totalCount=EmployeeDAO.getInstance().getTotalCount();
-		request.setAttribute("empTotalCount", totalCount);
+		request.setAttribute("empTotalCount", "board/list.jsp");
 		return "home.jsp";
 	}
 
