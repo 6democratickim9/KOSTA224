@@ -7,7 +7,8 @@
 						  					( 부서 테이블과 사원 테이블간의 부서번호가 일치할 때 조인 ) 
 						  2) Non Equi Join - 조인 대상 테이블 간의 상응하는 컬럼 정보가 없을 때 사용하는 JOIN 
 						  						 테이블 간의 컬럼 값들이 정확하기 일치하지 않을 때 사용하는 JOIN 
-						  					( ) 	 
+						  					( 사원 테이블과 월급 등급 테이블간의 일치하는 컬럼은 없지만 사원의 월급 등급을 
+						  					  알기 위해 월급 등급 테이블의 hisal , losal 과 사원 테이블의 sal 을 비교 ) 	 
 
 	2. Outer JOIN - JOIN 조건에 부합되지 않더라도 다른 행을 조회하기 위해 
 						( 부서 테이블과 사원 테이블 조인시 INNER JOIN은 사원이 없는 부서는 제외 
@@ -40,8 +41,6 @@ from emp e, salgrade s
 where e.sal>=s.losal and e.sal<=s.hisal 
 and e.ename='SMITH'
 
--- emp 테이블의 empno, ename, sal을 가져오고, salgrade의 grade,losal, hisal을 조회한다
--- grade에서는 e.sal이 losal과 hisal의 범위 내에 있으며 ename은 스미스여야 한다
 
 /*
  		2. Outer Join : 일반적인 조인 ( Inner Join ) 조건에 만족하지 않는 경우에도 조회하기 위해 사용
@@ -130,8 +129,6 @@ and e.sal>=s.losal
 and e.sal<=s.hisal
 and e.mgr=m.empno
 and e.empno=7369
-
-
 --  사원의 사원명ename , 부서명dname , 월급등급grade, 매니저명 mgr 의 ename 을 조회 
 --  매니저가 없는 사원까지 모두 조회한다 ( Outer join 을 이용 ) 
 select e.ename,d.dname,s.grade,m.ename as mgr_name
