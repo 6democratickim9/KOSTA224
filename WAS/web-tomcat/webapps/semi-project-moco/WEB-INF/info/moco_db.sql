@@ -91,6 +91,10 @@ insert into moco_member(email, password, nickname, github) values('jsp@naver.com
 -- insert moco_qna_board
 insert into moco_qna_board(post_no, post_title, post_content, post_code, post_regdate, email, language_code)
 values(moco_qna_board_seq.nextval, 'java error', '이 코드 에러 왜 나는지 모르겠네요', 'String s = 1;', sysdate, 'test@naver.com', 1);
+
+
+insert into moco_qna_board(post_no, post_title, post_content, post_code, post_regdate, email, language_code)
+values(moco_qna_board_seq.nextval, '파이썬 와이라노', '이 코드 에러 왜 나는지 모르겠네요', 'String s = 1;', sysdate, 'test@naver.com', 2);
 ​
 insert into moco_qna_board(post_no, post_title, post_content, post_code, post_regdate, email, language_code)
 values(moco_qna_board_seq.nextval, 'python error', '도와주세요', 'num = 3;', sysdate, 'java@naver.com', 2);
@@ -143,3 +147,29 @@ from (
 	where c.post_no = b.post_no and b.post_no = '1'
 ) v, moco_member m
 where v.email = m.email
+
+-- 랭킹조회
+select r.grade
+from moco_member m, moco_rank r 
+where m.thumbs>=r.min_thumbs and m.thumbs<=r.min_thumbs 
+and m.email='test@naver.com';
+
+
+-- 특정 회원 게시물 조회
+select v.post_no, v.post_title, v.post_regdate, v.hits,  l.language
+from (
+	select b.post_no, b.post_title, b.post_regdate, 
+		b.hits, b.language_code as lang
+	from moco_qna_board b, moco_member m
+	where m.email = 'test@naver.com'
+) v, moco_service_language l
+where v.lang = l.language_code 
+order by v.post_no desc
+
+
+
+
+
+select b.post_title, b.post_content, b.post_code, b.post_regdate, b.hits, l.language
+from moco_qna_board b, moco_service_language l
+	where b.email='test@naver.com';

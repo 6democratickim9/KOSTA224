@@ -26,7 +26,7 @@
  			}
  		}
  	</script> 	
- 	<a href="javascript:logout()">로그아웃</a>&nbsp;&nbsp;
+ 	<a href="javascript:logout()">로그아웃</a>
  	<form action="LogoutController.do" method="post" id="logoutForm"></form>
  	</c:otherwise>
  </c:choose>
