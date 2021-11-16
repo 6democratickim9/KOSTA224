@@ -98,10 +98,14 @@ SELECT ename,job,sal FROM emp WHERE ename LIKE '%S%';
 
 
 
+select * from 
 
+select empno,ename,mgr from emp where empno=7902
 
-
-
+select e.empno,e.ename,e.mgr,m.empno,m.ename
+from emp e,emp m
+where e.mgr=m.empno
+and e.empno=7902
     
     
     

@@ -176,6 +176,25 @@ public class BoardDAO {
 		}
 		return totalPostCount;
 	}
+	
+	
+	public int getMemberPostCount(String email) throws SQLException {
+		int mypagePostCount=0;
+		Connection con=null;
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		try {
+			con=dataSource.getConnection();
+			String sql="select count(*) from moco_qna_board where email=?";
+			pstmt=con.prepareStatement(sql);
+			rs=pstmt.executeQuery();
+			if(rs.next())
+				mypagePostCount=rs.getInt(1);
+		}finally {
+			closeAll(rs, pstmt, con);
+		}
+		return mypagePostCount;
+	}
 }
 
 

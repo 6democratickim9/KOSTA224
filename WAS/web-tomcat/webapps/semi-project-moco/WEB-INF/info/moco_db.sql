@@ -8,6 +8,89 @@ create table moco_member(
 )
 select * from moco_member;
 
+--file
+
+create table upload_file(
+	fileName varchar2(200),
+	fileRealName varchar2(200)
+)
+
+select * from upload_file;
+insert into upload_file (fileName, fileRealName) values ('sopho.png','so.png')
+
+create table moco_scrap (
+scrap_no number primary key,
+email varchar2(100) not null,
+post_no number not null,
+scrap_date date not null,
+constraint fk_email foreign key(email) references moco_member(email),
+constraint fk_post_no foreign key(post_no) references moco_qna_board(post_no)
+);
+
+create sequence moco_scrap_seq;
+
+
+select v.rnum,v.scrap_no, v.post_no, b.post_title, to_char(b.post_regdate, 'yyyy-mm-dd') as post_regdate, v.nickname, b.hits 
+from(select row_number() over(order by s.scrap_date desc) as rnum, s.scrap_no, m.email, m.nickname, s.post_no, s.scrap_date
+from moco_member m, moco_scrap s 
+where m.email=s.email
+) v, moco_qna_board b
+where v.post_no=b.post_no
+and v.rnum between 1 and 5
+order by v.scrap_no desc
+
+select v.rnum,v.scrap_no, v.post_no, b.post_title, to_char(b.post_regdate, 'yyyy-mm-dd') as post_regdate, v.nickname, b.hits
+from(
+select row_number() over(order by s.scrap_date desc) as rnum, s.scrap_no, m.email, m.nickname, s.post_no, s.scrap_date
+from moco_member m, moco_scrap s
+where m.email=s.email and m.email='test@naver.com'
+) v, moco_qna_board b 
+where v.post_no=b.post_no
+and v.rnum between 1 and 5
+order by v.scrap_no desc
+
+
+
+delete from moco_scrap where scrap_no=1
+
+drop table moco_scrap;
+drop sequence moco_scrap_seq;
+-- insert moco_qna_board
+insert into moco_qna_board(post_no, post_title, post_content, post_code, post_regdate, email, language_code)
+values(moco_qna_board_seq.nextval, 'java error', '이 코드 에러 왜 나는지 모르겠네요', 'String s = 1;', sysdate, 'test@naver.com', 1);
+
+delete from moco_scrap where post_no=1;
+select * from moco_scrap;
+select * from moco_qna_board;
+insert into moco_scrap values(moco_scrap_seq.nextval,'test@naver.com', 1, sysdate);
+--insert into moco_scrap values('test@naver.com', 2, sysdate);
+
+commit
+
+
+-- create moco_qna_board table
+create table moco_qna_board(
+	post_no number primary key,
+	post_title varchar2(100) not null,
+	post_content clob not null,
+	post_code clob not null,
+	post_regdate date not null,
+	hits number default 0,
+	email varchar2(100) not null,
+	language_code number not null,
+	
+	constraint fk_board_email foreign key(email) references moco_member(email),
+	constraint fk_board_language_code foreign key(language_code) references moco_service_language(language_code)
+)
+select * from moco_qna_board;
+drop table moco_qna_board;
+​
+-- create sequence
+create sequence moco_qna_board_seq;
+drop sequence moco_qna_board_seq;
+
+
+
 
 drop table moco_member;
 ​
@@ -30,26 +113,7 @@ create table moco_service_language(
 select * from moco_service_language;
 drop table moco_service_language;
 ​
--- create moco_qna_board table
-create table moco_qna_board(
-	post_no number primary key,
-	post_title varchar2(100) not null,
-	post_content clob not null,
-	post_code clob not null,
-	post_regdate date not null,
-	hits number default 0,
-	email varchar2(100) not null,
-	language_code number not null,
-	
-	constraint fk_board_email foreign key(email) references moco_member(email),
-	constraint fk_board_language_code foreign key(language_code) references moco_service_language(language_code)
-)
-select * from moco_qna_board;
-drop table moco_qna_board;
-​
--- create sequence
-create sequence moco_qna_board_seq;
-drop sequence moco_qna_board_seq;
+
 ​
 ​
 -- create comment table
@@ -149,27 +213,75 @@ from (
 where v.email = m.email
 
 -- 랭킹조회
-select r.grade
+select r.grade,m.thumbs
 from moco_member m, moco_rank r 
-where m.thumbs>=r.min_thumbs and m.thumbs<=r.min_thumbs 
+where m.thumbs>=r.min_thumbs and m.thumbs<=r.max_thumbs 
 and m.email='test@naver.com';
 
+select * from moco_member m where m.email='test@naver.com';
 
 -- 특정 회원 게시물 조회
-select v.post_no, v.post_title, v.post_regdate, v.hits,  l.language
+select v.post_no, v.post_title, v.post_regdate, v.hits, l.language as lang
 from (
 	select b.post_no, b.post_title, b.post_regdate, 
 		b.hits, b.language_code as lang
 	from moco_qna_board b, moco_member m
-	where m.email = 'test@naver.com'
+	where b.email ='test@naver.com'
 ) v, moco_service_language l
 where v.lang = l.language_code 
 order by v.post_no desc
 
 
+--회원이 작성한 게시글 수 조회
+select count(*) from moco_qna_board where email='foxy@naver.com';
 
 
 
-select b.post_title, b.post_content, b.post_code, b.post_regdate, b.hits, l.language
+
+select b.post_title, b.post_content, b.post_code, b.post_regdate, b.hits, b.language_code
+from moco_qna_board b
+	where b.email='foxy0114@naver.com';
+
+select * from moco_qna_board;
+
+--마이페이지 포스트조회
+
+select v.post_no, v.post_title, v.post_regdate, v.hits, l.language as lang
+from moco_qna_board v, moco_service_language l
+where l.language_code=v.language_code
+and v.email='foxy0114@naver.com';
+
+
+
+
+--페이징용 포스트조회
+select v.rnum, v.post_no, v.post_title, to_char(v.post_regdate, 'yyyy-mm-dd') 
+as post_regdate, v.hits, v.language, v.language_code,m.nickname
+from (
+select row_number() over(order by b.post_regdate desc) as rnum, b.post_no, b.post_title, 
+b.post_regdate, b.hits, b.email, l.language, b.language_code
 from moco_qna_board b, moco_service_language l
-	where b.email='test@naver.com';
+where b.language_code = l.language_code  and b.email='test@naver.com'
+) v, moco_member m 
+where v.rnum between 1 and 5
+and  v.email=m.email
+order by v.post_regdate desc
+
+
+alter table moco_member add thema varchar(25) default 'duotone-light' not null;
+
+
+
+
+select v.rnum, v.post_no, v.post_title, to_char(v.post_regdate, 'yyyy-mm-dd') m.nickname
+as post_regdate, m.nickname, v.hits,  v.language as lang
+from(
+select row_number() over(order by b.post_regdate desc) as rnum, 
+b.post_no, b.post_title, b.post_regdate, b.hits, l.language
+from moco_qna_board b, moco_service_language l
+where b.language_code = l.language_code
+) v, moco_member m
+where v.email = m.email and m.email='test@naver.com'
+and v.rnum between 6 and 10
+order by v.post_regdate desc
+
