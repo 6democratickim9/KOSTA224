@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Appenders>        
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d %-5p [%t] %C{10} (%F:%L) - %m%n" />
+        </Console>
+        <File name="file" fileName="report.log" append="true">
+            <PatternLayout pattern="%d %-5p [%t] %C{10} (%F:%L) - %m%n" />
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <Root level="warn">
+            <AppenderRef ref="console" />            
+        </Root>  
+        
+    </Loggers>
+</Configuration>
+
+
+
+
+
+
+
+
+
+
+
+
+
