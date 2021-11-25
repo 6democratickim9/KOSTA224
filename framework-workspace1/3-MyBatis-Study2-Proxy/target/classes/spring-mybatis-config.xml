@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+<bean id="dbcp" class="org.apache.commons.dbcp2.BasicDataSource">
+<property name="driverClassName" value="oracle.jdbc.OracleDriver"/>
+<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:xe"/>
+<property name="username" value="scott"/>
+<property name="password" value="tiger"/>
+</bean>
+<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+<property name="dataSource" ref="dbcp"/>
+<property name="typeAliasesPackage" value="org.kosta.model"/>
+
+</bean>
+<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+<constructor-arg ref="sqlSessionFactory"/>
+</bean>
+<!-- 
+	MyBatis Proxy 를 위한 설정(DAO(Mapper) inteface를 implements 한 구현 객체 - DAOImpl)
+	DAOImpl 구현체를 Framework차원으로 자동 생성 - @Mapper 어노테이션을 영속성 계층 인터페이스에 명시
+	org.kosta.model 이하의 @Mapper 가 명시된 인텊이스를 검색해 구현체를 생성하다
+ -->
+<mybatis-spring:scan base-package="org.kosta.model"/>
+<context:component-scan base-package="org.kosta"/>
+</beans>
