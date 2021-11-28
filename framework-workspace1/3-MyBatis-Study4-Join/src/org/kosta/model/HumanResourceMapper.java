@@ -5,7 +5,7 @@ import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
-@Mapper //현 인터페이스를 implements 하는 Proxy 구현체를 생성하기 위한 어노테이션
+@Mapper // 현 인터페이스를 implements 하는 Proxy 구현체를 생성하기 위한 어노테이션 ( 애너테이션 ) 
 public interface HumanResourceMapper {
 
 	List<Map<String, Object>> getAllDepartmentList();
