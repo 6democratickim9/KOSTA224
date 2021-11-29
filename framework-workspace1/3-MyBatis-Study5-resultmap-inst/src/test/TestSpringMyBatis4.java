@@ -1,0 +1,26 @@
+package test;
+
+import java.util.List;
+
+import org.kosta.model.mapper.MovieMapper;
+import org.kosta.model.vo.MovieVO;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+//Movie table에 영화정보를 등록하는 예제
+public class TestSpringMyBatis4 {
+	public static void main(String[] args) {
+		ClassPathXmlApplicationContext ctx=new ClassPathXmlApplicationContext("spring-mybatis-config.xml");
+		MovieMapper mapper=(MovieMapper)ctx.getBean("movieMapper");
+		List<MovieVO> list=mapper.getAllMovieList();
+		for(MovieVO vo:list)
+			System.out.println(vo.getTitle()+" "+vo.getDirectorVO().getDirectorName());
+		ctx.close();
+	}
+}
+
+
+
+
+
+
+
+

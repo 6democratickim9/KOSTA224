@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.kosta.model.mapper.MovieMapper">
+	<insert id="registerDirector" parameterType="DirectorVO">
+		insert into
+		director(director_id,director_name,intro)values(director_seq.nextval,#{directorName},#{intro})
+	</insert>
+	<insert id="getAllDirectorList" resultType="DirectorVO">
+	select director_id,director_name,intro from director order by director_id desc
+	</insert>
+</mapper>
