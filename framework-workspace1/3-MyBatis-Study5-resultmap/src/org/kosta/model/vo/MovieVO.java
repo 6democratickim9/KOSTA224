@@ -15,9 +15,8 @@ public class MovieVO {
 		// TODO Auto-generated constructor stub
 	}
 
-	public MovieVO(int movieId, String title, String genre, int attendance, DirectorVO directorVO) {
+	public MovieVO(String title, String genre, int attendance, DirectorVO directorVO) {
 		super();
-		this.movieId = movieId;
 		this.title = title;
 		this.genre = genre;
 		this.attendance = attendance;

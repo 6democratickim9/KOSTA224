@@ -23,13 +23,27 @@ create table movie(
 	constraint fk_spring_director_id references director(director_id)
 )
 create sequence movie_seq;
+drop sequence movie_seq;
 
 select * from movie;
 
 
+--movie 와 director inner join(title, director_name)
+
+select m.title,d.director_name
+from movie m, DIRECTOR d
+where m.director_id=d.director_id
+
+select m.title,d.director_name
+from movie m, DIRECTOR d
+where m.director_id(+)=d.director_id
 
 
-
+--movie_id 가 1인 영화의 모든 정보와 감독의 모든 정보 조회
+select m.title,m.genre, m.attendance, d.director_name, d.intro
+from movie m, DIRECTOR d
+where m.director_id(+)=d.director_id
+and m.director_id=1
 
 
 

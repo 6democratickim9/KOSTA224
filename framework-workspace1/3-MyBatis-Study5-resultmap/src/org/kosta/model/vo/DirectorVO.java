@@ -8,9 +8,14 @@ public class DirectorVO {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	public DirectorVO(int directorId, String directorName, String intro) {
+		super();
+		this.directorId = directorId;
+		this.directorName = directorName;
+		this.intro = intro;
+	}
 	public DirectorVO( String directorName, String intro) {
 		super();
-	
 		this.directorName = directorName;
 		this.intro = intro;
 	}
@@ -36,7 +41,7 @@ public class DirectorVO {
 	public String toString() {
 		return "DirectorVO [directorId=" + directorId + ", directorName=" + directorName + ", intro=" + intro + "]";
 	}
-	
+
 
 
 }
