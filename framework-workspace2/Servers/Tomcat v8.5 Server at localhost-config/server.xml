@@ -153,7 +153,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="springmvc01" path="/springmvc01" reloadable="true" source="org.eclipse.jst.jee.server:springmvc01"/><Context docBase="springmvc04-junit" path="/springmvc04-junit" reloadable="true" source="org.eclipse.jst.jee.server:springmvc04-junit"/><Context docBase="ajax-xml-inst" path="/ajax-xml-inst" reloadable="true" source="org.eclipse.jst.jee.server:ajax-xml-inst"/><Context docBase="ajax-json" path="/ajax-json" reloadable="true" source="org.eclipse.jst.jee.server:ajax-json"/><Context docBase="jQuery-Ajax1" path="/jQuery-Ajax1" reloadable="true" source="org.eclipse.jst.jee.server:jQuery-Ajax1"/></Host>
+      <Context docBase="springmvc02" path="/springmvc02" reloadable="true" source="org.eclipse.jst.jee.server:springmvc02"/><Context docBase="jQuery-Ajax2" path="/jQuery-Ajax2" reloadable="true" source="org.eclipse.jst.jee.server:jQuery-Ajax2"/></Host>
     
     </Engine>
   </Service>

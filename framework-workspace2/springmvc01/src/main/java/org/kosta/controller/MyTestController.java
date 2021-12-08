@@ -1,5 +1,7 @@
 package org.kosta.controller;
 
+import org.kosta.model.CustomerDTO;
+import org.kosta.model.UserDTO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -60,5 +62,35 @@ public class MyTestController {
 	public String methodTest2() {
 		return"result4";
 	}
-	
+	//get방식만 허용하고자 할 때 4.3이상에서 아래 어노테이션을 지원
+	//@GetMapping("paramTest4.do")
+	@PostMapping("paramTest4.do")
+	//HandlerAdapter가 아래의 매개변수에 맞게 폼데이터를 객체로 생성해서 전달
+	public String paramTest4(CustomerDTO customerDTO) {
+		System.out.println(customerDTO);
+		return "result4";
+	}
+	@PostMapping("redirectTest.do")
+	public String redirectTest(CustomerDTO customer) {
+		System.out.println(customer);
+		//아래 방식은 클라이언트(브라우저)가 직접 jsp에 접근할 수 없도록 구조(WEB-INF아래)를 정의했으므로 error
+		//이유는 Front Controller Pattern 모든 클라이언트의 요청은 DispatcherServlet를 통하도록 해야하므로
+		//return "redirect:result5.jsp";
+		return "redirect:testResult.do?customerId="+customer.getId();//springmvc에서 redirect방식으로 응답할 때는 서두에 redirect: 를 명시
+	}
+	@RequestMapping("testResult.do")
+	public String testResult(String customerId) {
+		System.out.println(customerId);
+		return "result5";
+	}
+	@PostMapping("hasA-test.do")
+	public String testHasA(UserDTO user) {
+		System.out.println(user+" db insert");
+		return "result5";
+	}
+	@PostMapping("login.do")
+	public String login(String id, String password) {
+		return"result6";
+	}
+
 }
