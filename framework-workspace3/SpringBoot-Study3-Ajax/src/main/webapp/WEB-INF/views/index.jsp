@@ -31,16 +31,18 @@
 						}
 					});//ajaxa
 				});//click
-				$("#AjaxBtn2").click(function() {
-					$.ajax({
-						type : "get",
-						url : "testAjax2",
-						data : "customerId=javaking",
-						success : function(result) {
-							alert(customer.id+" "+customer.name+" "+customer.address);
-						}
-					});//ajax
-				});//click
+				$("#AjaxBtn2").click(
+						function() {
+							$.ajax({
+								type : "get",
+								url : "testAjax2",
+								dataType : "json",
+								data : "customerId=javaking",
+								success : function(customer) {
+									alert(customer.id + " " + customer.name + " " + customer.address);
+								}
+						});//ajax
+					});//click
 				$("#AjaxBtn3").click(function() {
 					$.ajax({
 						type : "get",
@@ -71,10 +73,10 @@
 					$.ajax({
 						type : "get",
 						url : "testAjax5",
-						dataType:"json",
+						dataType : "json",
 						data : "id=javaking",
 						success : function(result) {
-								alert(result.CAR_NO+" "+result.MODEL);
+							alert(result.CAR_NO + " " + result.MODEL);
 						}
 					});//ajax
 				});//click
@@ -102,6 +104,8 @@
 		<button type="button" id="AjaxBtn5">AjaxTest5</button>
 		<%-- 한글로 된 일반문자열 데이터 응답받는 테스트  --%>
 		<button type="button" id="AjaxBtn6">AjaxTest6</button>
+		<br><br>
+		<a href="employeeAjaxTestView">사원검색페이지</a>
 
 		<br>
 	</div>

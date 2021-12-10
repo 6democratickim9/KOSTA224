@@ -7,4 +7,6 @@ public interface DepartmentMapper {
 
 	int getTotalDepartmentCount();
 
+	Object getDepartmentList();
+
 }

@@ -5,4 +5,7 @@
 	<select id="getTotalDepartmentCount" resultType="int">
 		select count(*) from springboot_department
 	</select>
+	<select id="getDepartmentList" resultType="DepartmentDTO">
+		select deptno,dname from springboot_department
+	</select>
 </mapper>
